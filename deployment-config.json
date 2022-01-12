@@ -5,7 +5,7 @@
         "username": "root",
         "password": "AlaKod61a",
         "port": "22",
-        "beforeHooks":  "echo $GITHUB_SHA",
+        "beforeHooks":  "echo ",
         "afterHooks":  "",
         "path": "/var/www/html"
 

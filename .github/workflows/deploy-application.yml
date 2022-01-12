@@ -58,6 +58,13 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: app-build
-
-
+      - name: Upload
+        uses:  
+        with:
+          host: ${{ matrix.server.ip }}
+          username: ${{ matrix.server.username }}
+          password: ${{ matrix.server.password }}
+          port: ${{ matrix.server.port}}
+          source: ${{ github.sha}}.tar.gz
+          target: ${{ matrix.server.path}}/artifacts 
 

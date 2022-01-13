@@ -99,10 +99,10 @@ jobs:
         uses: appleboy/ssh-action@master
         env: 
           GITHUB_SHA: ${{ github.sha }}
-          RELEASE_PATH: ${ matrix.server.path }/releases/${{ github.sha }}
-          ACTIVE_RELEASE_PATH: ${ matrix.server.path}}/current
-          STORAGE_PATH: ${ matrix.server.path }}/storage
-          BASE_PATH: ${ matrix.server.path}}
+          RELEASE_PATH: ${{ matrix.server.path }/releases/${{ github.sha }}
+          ACTIVE_RELEASE_PATH: ${{ matrix.server.path}}/current
+          STORAGE_PATH: ${{ matrix.server.path }}/storage
+          BASE_PATH: ${{ matrix.server.path}}
         with: 
           host: ${{ matrix.server.ip }}
           username: ${{ matrix.server.username }}
@@ -113,7 +113,7 @@ jobs:
             ${{ matrix.server.beforeHooks }} 
 
   active-release:
-    name: "${{ matrix.server.name }}: Active Release "
+    name: "${{ matrix.server.name }}: Active Release"
     runs-on: ubuntu-latest 
     needs: [ create-deployment-artifacts, prepare-release-on-servers, run-before-hooks ]
     strategy:
@@ -124,10 +124,10 @@ jobs:
         uses: appleboy/ssh-action@master
         env: 
           GITHUB_SHA: ${{ github.sha }}
-          RELEASE_PATH: ${ matrix.server.path }/releases/${{ github.sha }}
-          ACTIVE_RELEASE_PATH: ${ matrix.server.path}}/current
-          STORAGE_PATH: ${ matrix.server.path }}/storage
-          BASE_PATH: ${ matrix.server.path}}
+          RELEASE_PATH: ${{ matrix.server.path }/releases/${{ github.sha }}
+          ACTIVE_RELEASE_PATH: ${{ matrix.server.path}}/current
+          STORAGE_PATH: ${{ matrix.server.path }}/storage
+          BASE_PATH: ${{ matrix.server.path}}
         with: 
           host: ${{ matrix.server.ip }}
           username: ${{ matrix.server.username }}

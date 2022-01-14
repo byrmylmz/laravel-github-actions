@@ -8,6 +8,5 @@
         "beforeHooks":  "echo $GITHUB_SHA",
         "afterHooks":  "",
         "path": "/var/www/html"
-
     }
 ]
